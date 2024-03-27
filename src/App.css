@@ -1,0 +1,19 @@
+.boardContainer{
+display: flex;
+justify-content: space-between;
+
+width: 100vw;
+}
+header{
+  position: absolute;
+  top:0
+}
+
+.Column{
+  
+  border: 2px solid red;
+  width: 15rem;
+  height: 80vh;
+  margin: 2rem
+  
+}
