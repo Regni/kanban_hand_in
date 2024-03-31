@@ -1,10 +1,10 @@
 import React from "react";
 
-const Post = ({ title, content, key }) => {
+const Post = ({ title, content, id, date }) => {
   return (
-    <div className="Card" draggable id={key}>
+    <div className="Card" draggable id={id}>
       <h3>{title}</h3>
-      <p>date here</p>
+      <p>{date}</p>
       <p>{content}</p>
       <button>delete card</button>
     </div>

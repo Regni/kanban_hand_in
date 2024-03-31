@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import Column from "./Column";
-const Board = ({ posts }) => {
+import DataContext from "./context/DataContext";
+const Board = () => {
+  const { columns } = useContext(DataContext);
+
   return (
     <div className="boardContainer">
-      <Column title="toDo" posts={posts} />
-      <Column title="Doing" />
-      <Column title="Done" />
+      {columns.map((columnName, index) => (
+        <Column title={columnName} key={index} />
+      ))}
     </div>
   );
 };
