@@ -10,10 +10,33 @@ header{
 }
 
 .Column{
-  
+  background-color: #DADADE;
+  border-radius: 10px;
   border: 2px solid red;
   width: 15rem;
   height: 80vh;
-  margin: 2rem
+  margin: 2rem;
+  color: black;
+  padding: 0.2rem;
+  
+}
+
+.Column>h2{
+  font-size: 1.2rem;
+  margin: 0 0 0.5rem 0.2rem;
+  background-color: white;
+  display: inline-block;
+  padding: 0 0.7rem;
+  border-radius: 1.2rem;
+}
+
+.Card{
+  background: white;
+  margin: 0.2rem 0;
+  max-height: 10rem;
+  border: 2px solid green;
+  overflow-y: scroll;
+  border-radius: 10px;
+  
   
 }
