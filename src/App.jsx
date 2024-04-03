@@ -1,6 +1,7 @@
 import Header from "./Header";
 import "./App.css";
 import Board from "./Board";
+import CreateTask from "./CreateTask";
 import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import { DataProvider } from "./context/DataContext";
@@ -22,6 +23,7 @@ function App() {
       <DataProvider>
         <Routes>
           <Route path="/" element={<Board />} />
+          <Route path="/create" element={<CreateTask />} />
         </Routes>
       </DataProvider>
     </>
