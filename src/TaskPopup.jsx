@@ -1,10 +1,15 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import DataContext from "./context/DataContext";
 
 const TaskPopup = ({ task, setIsOpen, onClose }) => {
   //creat copy of the task to be edited
   const [editedTask, setEditedTask] = useState(task);
   const { posts, setPosts } = useContext(DataContext);
+
+  //rerenders the popup when a user clicks on a card behind the popup
+  useEffect(() => {
+    setEditedTask({ ...task });
+  }, [task]);
 
   //when title or conent are editted this will changed the editedTask
   const handleEdit = (e) => {
