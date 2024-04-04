@@ -33,7 +33,7 @@ const CreateTask = () => {
   };
 
   //saves the new tasks to the post context and return user to main board
-  const handleSumbmit = (e) => {
+  const handleFormSumbmit = (e) => {
     e.preventDefault();
     getID();
     setPosts((prev) => [...prev, newTask]);
@@ -43,7 +43,7 @@ const CreateTask = () => {
   return (
     <div>
       <h3>Create new task</h3>
-      <form onSubmit={handleSumbmit}>
+      <form onSubmit={handleFormSumbmit}>
         <label htmlFor="newTaskTitle">Title: </label>
         <input
           onChange={handleChange}
