@@ -15,13 +15,16 @@ const CreateTask = () => {
 
   //Function to find a unique ID, will re-use ID if a task has been removed.
   function getID() {
-    const allID = posts.map((task) => task.id);
-    for (let i = 1; i <= allID.length; i++) {
-      if (!allID.includes(i)) {
-        return i;
+    if (posts != null) {
+      const allID = posts.map((task) => task.id);
+      for (let i = 1; i <= allID.length; i++) {
+        if (!allID.includes(i)) {
+          return i;
+        }
       }
+      return allID.length + 1;
     }
-    return allID.length + 1;
+    return 1;
   }
   //Save changes to the new task
   const handleChange = (e) => {

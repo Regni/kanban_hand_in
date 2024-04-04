@@ -8,8 +8,18 @@ const Post = ({ title, content, id, date }) => {
     setPosts(newPostsList);
   };
 
+  const handleDragStart = (e, id) => {
+    e.dataTransfer.setData("id", id);
+    console.log("draggin!");
+  };
+
   return (
-    <div className="Card" draggable id={id}>
+    <div
+      className="Card"
+      draggable
+      id={id}
+      onDragStart={(e) => handleDragStart(e, id)}
+    >
       <h3>{title}</h3>
       <p>{date}</p>
       <p>{content}</p>
