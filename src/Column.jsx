@@ -3,7 +3,7 @@ import Post from "./Post";
 import DataContext from "./context/DataContext";
 import { Link } from "react-router-dom";
 
-const Column = ({ title, index }) => {
+const Column = ({ title, index, handleSelect }) => {
   const { posts, setPosts, columns } = useContext(DataContext);
 
   //To handle the drop and drag of elements
@@ -13,7 +13,7 @@ const Column = ({ title, index }) => {
 
   const handleDrop = (e, targetColumn) => {
     const draggedId = e.dataTransfer.getData("id");
-
+    //sets the newcolumns index as the assigned to property of the post/task
     const draggedPost = posts.find((task) => task.id === Number(draggedId));
     draggedPost.assignedTo = columns.indexOf(targetColumn);
 
@@ -40,6 +40,7 @@ const Column = ({ title, index }) => {
                 id={test.id}
                 date={test.date}
                 key={`${test.id}key`}
+                handleSelect={handleSelect}
               />
             ) : null
           )

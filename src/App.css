@@ -1,6 +1,7 @@
 .boardContainer{
 display: flex;
 justify-content: space-between;
+position: relative;
 
 width: 100vw;
 }
@@ -39,4 +40,21 @@ header{
   border-radius: 10px;
   
   
+}
+
+.popupContainer{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
+  background-color: white;
+  width: 75vw;
+  height: 40vh;
+  top: 50%;
+  left: 0;
+  right: 50%;
+  bottom: 0;
+  transform: translate(15%,-50%);
+  color: black;
 }
