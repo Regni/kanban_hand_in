@@ -29,7 +29,9 @@ const Column = ({ title, index, handleSelect }) => {
       onDragOver={(e) => handleDragOver(e)}
       onDrop={(e) => handleDrop(e, title)}
     >
-      <h2>{title}</h2>
+      <h2>
+        <Link to={`/column/${title}`}>{title}</Link>
+      </h2>
 
       {posts != null
         ? posts.map((test) =>
@@ -47,9 +49,9 @@ const Column = ({ title, index, handleSelect }) => {
         : null}
       {/* if it is the first column it will add a create task element to link to other page */}
       {index === 0 ? (
-        <button className="addTask">
-          <Link to="/create">Create new task</Link>
-        </button>
+        <Link to="/create">
+          <button className="addTask">Create new task</button>
+        </Link>
       ) : null}
     </div>
   );

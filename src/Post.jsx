@@ -24,7 +24,15 @@ const Post = ({ title, content, id, date, handleSelect }) => {
       <h3>{title}</h3>
       <p>{date}</p>
       <p>{content}</p>
-      <button onClick={() => handleDelete(id)}>delete card</button>
+      <button
+        onClick={(e) => {
+          //Stops both on clicks being triggered
+          e.stopPropagation();
+          handleDelete(id);
+        }}
+      >
+        delete card
+      </button>
     </div>
   );
 };

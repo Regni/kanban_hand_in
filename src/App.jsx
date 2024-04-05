@@ -1,6 +1,7 @@
 import Header from "./Header";
 import "./App.css";
 import Board from "./Board";
+import FullScreenColumn from "./FullScreenColumn";
 import CreateTask from "./CreateTask";
 import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
@@ -24,6 +25,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Board />} />
           <Route path="/create" element={<CreateTask />} />
+          <Route path="/column/:ID" element={<FullScreenColumn />} />
         </Routes>
       </DataProvider>
     </>
