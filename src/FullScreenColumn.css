@@ -5,38 +5,45 @@
 
 .fullScreenContainer{
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   height: 85VH;
   width: 100vw;
-  border: 2px solid red;
+  
   
 }
 .fullScreenColumn{
+  border-radius: 10px;
   width: 35vw;
-  background-color: lightgrey;
+  background-color: #DADADE;
   color: black;
   height: 100%;
+  box-shadow: 2px 2px 5px 3px white;
 }
 
 .returnBoardBtn{
 position: absolute;
 bottom:0;
 left: 50%;
-transform: translateX(-50%);
-margin: 1rem;
+transform: translateX(-75%);
+margin: 0.5rem 1rem;
 
 }
 
 .fullScreenTask{
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px 3px white;
+  padding: 1em;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 35vw;
-  background-color: lightgrey;
+  background-color: #DADADE;
   color: black;
   height: 100%;
 }
 
 .fullScreenTaskContent{
+  margin: 3em;
+  display: inline-block;
   flex-grow: 1;
 }
