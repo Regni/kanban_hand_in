@@ -53,11 +53,11 @@ const CreateTask = () => {
         />
         <br />
         <label htmlFor="newTaskContent">Content: </label>
-        <input
+        <textarea
           onChange={handleChange}
           name="content"
           id="newTaskContent"
-          type="textarea"
+    
         />
         <br />
         <button type="submit">submit</button>

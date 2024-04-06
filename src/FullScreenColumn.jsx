@@ -4,20 +4,35 @@ import "./FullScreenColumn.css";
 import Post from "./Post";
 import DataContext from "./context/DataContext";
 const FullScreenColumn = () => {
-  const { posts, columns } = useContext(DataContext);
+  const { posts, setPosts, columns } = useContext(DataContext);
   const { ID } = useParams();
   const index = columns.indexOf(ID);
 
-  const [selectedPost, setSelectedPost] = useState("");
+  const [selectedPost, setSelectedPost] = useState({});
 
   const handleClick = (i) => {
-    console.log(i);
     const clickedPost = posts.find((post) => post.id === i);
     setSelectedPost(clickedPost);
-    console.log(selectedPost);
   };
   const handleClose = () => {
-    setSelectedPost("");
+    setSelectedPost({});
+  };
+
+
+  //when title or conent are editted this will changed the editedTask
+  const handleEdit = (e) => {
+    console.log(e)
+    const { dataset, innerText } = e.target;
+    const { name } = dataset;
+    setSelectedPost((p) => ({ ...p, [name]: innerText }));
+  };
+
+  //changes the old task to the newEdited one and closes the popup.
+  const handleSave = () => {
+    const editedPosts = posts.map((task) =>
+      task.id === selectedPost.id ? selectedPost : task
+    );
+    setPosts(editedPosts);
   };
   return (
     <div className="fullScreenContainer">
@@ -42,9 +57,25 @@ const FullScreenColumn = () => {
       {selectedPost ? (
         <div className="fullScreenTask">
           <p>{selectedPost.date}</p>
-          <h1>{selectedPost.title}</h1>
-          <p className="fullScreenTaskContent">{selectedPost.content}</p>
-          <button onClick={handleClose}>Close</button>
+      <h2
+        contentEditable
+        onInput={handleEdit}
+        suppressContentEditableWarning
+        data-name="title"
+      >
+        {selectedPost.title}
+      </h2>
+      <p
+      className="fullScreenTaskContent"
+        suppressContentEditableWarning
+        contentEditable
+        onInput={handleEdit}
+        data-name="content"
+      >
+      {selectedPost.content}
+      </p>
+      <button onClick={handleSave}>save changes</button>
+      <button onClick={handleClose}>close</button>
         </div>
       ) : null}
       <Link to="/">
