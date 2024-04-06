@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import DataContext from "./context/DataContext";
-const Post = ({ title, content, id, date, handleSelect }) => {
+import { RiDeleteBin5Line as Bin } from "react-icons/ri";
+const Post = ({ title, id, date, handleSelect }) => {
   const { posts, setPosts } = useContext(DataContext);
   //Removes the div and information from the post
   const handleDelete = (id) => {
@@ -24,15 +25,14 @@ const Post = ({ title, content, id, date, handleSelect }) => {
       <h3>{title}</h3>
       <p>{date}</p>
 
-      <button
+      <Bin
+        className="deleteIcon"
         onClick={(e) => {
           //Stops both on clicks being triggered
           e.stopPropagation();
           handleDelete(id);
         }}
-      >
-        delete card
-      </button>
+      />
     </div>
   );
 };

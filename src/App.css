@@ -7,19 +7,36 @@ width: 100vw;
 }
 header{
   position: absolute;
-  top:0
+  top:0;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  box-shadow: 0 2px 13px 10px white;
+  width: 100vw;
+  height: 5vh;
+  background-color: #DADADE;
+  color: black;
 }
+
+header div{
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.homeWrapper{
+  height: 100%;
+}
+
 
 .Column{
   background-color: #DADADE;
   border-radius: 10px;
-  border: 2px solid red;
   width: 15rem;
   height: 80vh;
   margin: 2rem;
   color: black;
   padding: 0.2rem;
-  
+  box-shadow: 1px 2px 7px 6px white;
 }
 
 .Column>h2{
@@ -38,8 +55,15 @@ header{
   max-height: 10rem;
   border: 2px solid green;
   border-radius: 10px;
+  position: relative;
   
-  
+}
+.deleteIcon{
+  font-size: 1.3em;
+  cursor: pointer;
+  position: absolute;
+  top: 3px;
+  right: 3px
 }
 
 .popupContainer{
@@ -58,3 +82,4 @@ header{
   transform: translate(15%,-50%);
   color: black;
 }
+

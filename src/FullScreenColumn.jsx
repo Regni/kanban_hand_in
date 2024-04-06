@@ -9,12 +9,14 @@ const FullScreenColumn = () => {
   const index = columns.indexOf(ID);
 
   const [selectedPost, setSelectedPost] = useState("");
+  //this prevents the post being changed by accident
   const [editText, setEditText] = useState(selectedPost);
 
   const handleClick = (i) => {
     const clickedPost = posts.find((post) => post.id === i);
     setSelectedPost(clickedPost);
   };
+  //changes the editText when a new card is selected
   useEffect(() => {
     setEditText(selectedPost);
   }, [selectedPost]);
@@ -37,6 +39,7 @@ const FullScreenColumn = () => {
     );
     setPosts(editedPosts);
   };
+
   return (
     <>
       <div className="fullScreenContainer">
