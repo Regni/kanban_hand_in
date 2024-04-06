@@ -56,7 +56,11 @@ header div{
   border: 2px solid green;
   border-radius: 10px;
   position: relative;
+  padding: 0 0.3rem;
   
+}
+.Card h3{
+  margin-bottom: 1rem;
 }
 .deleteIcon{
   font-size: 1.3em;
@@ -81,5 +85,33 @@ header div{
   bottom: 0;
   transform: translate(15%,-50%);
   color: black;
+  border: 2px solid black;
+  box-shadow: 4px 5px 4px 5px rgba(0, 0, 0, 0.487);
+}
+.popupContent{
+  margin: 0.5rem 0.3rem;
+  flex-grow: 1;
+  text-align: center;
+  width: 90%;
+  border: 1px solid black;
+}
+.popupDate{
+  position: absolute;
+  left:5px;
+  top: 5px;
+  padding: 0.3em 2em;
+  background-color: lightgray;
+  border-radius: 1rem 1rem;
 }
 
+.closePopup{
+  position: absolute;
+  right:5px;
+  top: 5px;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+.popupContainer>button{
+  margin: 0.3rem;
+}

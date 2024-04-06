@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import DataContext from "./context/DataContext";
+import { IoMdClose as Closecross } from "react-icons/io";
 
 const TaskPopup = ({ task, setIsOpen, onClose }) => {
   //creat copy of the task to be edited
@@ -31,21 +32,22 @@ const TaskPopup = ({ task, setIsOpen, onClose }) => {
   const handleClose = () => setIsOpen(false);
   return (
     <div className="popupContainer">
-      <button onClick={handleClose}>close</button>
-      <p>{task.date}</p>
-      <h2
+      <Closecross className="closePopup" onClick={handleClose} />
+      <p className="popupDate">{task.date}</p>
+      <h1
         contentEditable
         onInput={handleEdit}
         suppressContentEditableWarning
         data-name="title"
       >
         {task.title}
-      </h2>
+      </h1>
       <p
         suppressContentEditableWarning
         contentEditable
         onInput={handleEdit}
         data-name="content"
+        className="popupContent"
       >
         {task.content}
       </p>
