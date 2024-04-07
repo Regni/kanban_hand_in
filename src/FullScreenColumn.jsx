@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import "./FullScreenColumn.css";
+import "./style/FullScreenColumn.css";
 import Post from "./Post";
 import DataContext from "./context/DataContext";
 const FullScreenColumn = () => {

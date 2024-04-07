@@ -1,5 +1,5 @@
 import Header from "./Header";
-import "./App.css";
+import "./style/App.css";
 import Board from "./Board";
 import FullScreenColumn from "./FullScreenColumn";
 import CreateTask from "./CreateTask";
