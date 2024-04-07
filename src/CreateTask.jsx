@@ -45,17 +45,24 @@ const CreateTask = () => {
     <div className="createClassContainer">
       <h3>Create new task</h3>
       <form onSubmit={handleFormSumbmit}>
-        <label htmlFor="newTaskTitle">Title: </label>
-        <input
-          onChange={handleChange}
-          name="title"
-          id="newTaskTitle"
-          type="text"
-        />
-        <br />
-        <label htmlFor="newTaskContent">Content: </label>
-        <textarea onChange={handleChange} name="content" id="newTaskContent" />
-        <br />
+        <div className="formElement">
+          <label htmlFor="newTaskTitle">Title: </label>
+          <input
+            onChange={handleChange}
+            name="title"
+            id="newTaskTitle"
+            type="text"
+          />
+        </div>
+        <div className="formElement">
+          <label htmlFor="newTaskContent">Content: </label>
+          <textarea
+            onChange={handleChange}
+            name="content"
+            id="newTaskContent"
+            rows={5}
+          />
+        </div>
         <button type="submit">submit</button>
       </form>
     </div>
