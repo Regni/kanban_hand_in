@@ -31,7 +31,9 @@ header div{
 .Column{
   background-color: #DADADE;
   border-radius: 10px;
-  width: 15rem;
+  min-width: 15rem;
+  max-width: 25rem;
+  flex-grow: 1;
   height: 80vh;
   margin: 2rem;
   color: black;
@@ -39,13 +41,27 @@ header div{
   box-shadow: 1px 2px 7px 6px white;
 }
 
-.Column>h2{
+.columnTitleContainer{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  height: 2.5rem;
+  align-items: center;
+  padding: 0.3rem 0.5rem;
+}
+
+.columnTitleContainer>h2{
   font-size: 1.2rem;
-  margin: 0 0 0.5rem 0.2rem;
+  margin: 0 0.2rem 0.5rem 0.2rem;
   background-color: white;
   display: inline-block;
   padding: 0 0.7rem;
   border-radius: 1.2rem;
+}
+.columnTitleContainer button{
+  font-size: 12px;
+  height: 32px;
+  
 }
 
 .Card{
@@ -71,6 +87,7 @@ header div{
 }
 
 .popupContainer{
+  min-width: 640px;
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -112,6 +129,9 @@ header div{
   cursor: pointer;
 }
 
-.popupContainer>button{
-  margin: 0.3rem;
+.popupButtons{
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0.5rem;
 }

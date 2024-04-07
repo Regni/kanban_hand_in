@@ -5,7 +5,7 @@ import { IoMdClose as Closecross } from "react-icons/io";
 const TaskPopup = ({ task, setIsOpen, onClose }) => {
   //creat copy of the task to be edited
   const [editedTask, setEditedTask] = useState(task);
-  const { posts, setPosts } = useContext(DataContext);
+  const { posts, setPosts, handleDelete } = useContext(DataContext);
 
   //rerenders the popup when a user clicks on a card behind the popup
   useEffect(() => {
@@ -51,7 +51,17 @@ const TaskPopup = ({ task, setIsOpen, onClose }) => {
       >
         {task.content}
       </p>
-      <button onClick={handleSave}>save changes</button>
+      <div className="popupButtons">
+        <button onClick={handleSave}>save changes</button>
+        <button
+          onClick={() => {
+            handleDelete(task.id);
+            handleClose();
+          }}
+        >
+          Delete
+        </button>
+      </div>
     </div>
   );
 };

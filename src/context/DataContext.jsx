@@ -12,13 +12,19 @@ export const DataProvider = ({ children }) => {
   //useState that will contain a array of names of columns their index is also in which order they will show up
   const [columns, setColumns] = useState(["todo", "doing", "done"]);
 
+  //Removes the div and information from the post
+  const handleDelete = (id) => {
+    const newPostsList = posts.filter((task) => task.id != id);
+    setPosts(newPostsList);
+  };
+
   //this will update every time posts is update.
   useEffect(() => {
     localStorage.setItem("allTasks", JSON.stringify(posts));
   }, [posts]);
 
   return (
-    <DataContext.Provider value={{ posts, setPosts, columns }}>
+    <DataContext.Provider value={{ posts, setPosts, columns, handleDelete }}>
       {children}
     </DataContext.Provider>
   );
