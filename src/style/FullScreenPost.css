@@ -1,0 +1,36 @@
+.fullScreenPostContainer{
+  width: 40vw;
+  min-width: 25rem;
+  color: black;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 60vh;
+  min-height: 50rem;
+  border-radius: 10px ;
+  margin: 1rem;
+  box-shadow: 0 0 4px 6px whitesmoke;
+  padding: 1rem;
+}
+
+
+.fullScreenContent{
+  border: 1px solid black;
+  border-radius: 5PX;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  flex-grow: 1;
+}
+
+.fullScreenPostContainer h1{
+  margin-bottom:  1rem;
+}
+
+.buttonContainer{
+  margin-top: 1rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
