@@ -1,5 +1,6 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import DataContext from "./context/DataContext";
+import "./style/CreateTask.css";
 import { useNavigate } from "react-router-dom";
 const CreateTask = () => {
   //set states here and a example of what the task object should look like before it is moved to post
@@ -41,7 +42,7 @@ const CreateTask = () => {
   };
 
   return (
-    <div>
+    <div className="createClassContainer">
       <h3>Create new task</h3>
       <form onSubmit={handleFormSumbmit}>
         <label htmlFor="newTaskTitle">Title: </label>
@@ -53,12 +54,7 @@ const CreateTask = () => {
         />
         <br />
         <label htmlFor="newTaskContent">Content: </label>
-        <textarea
-          onChange={handleChange}
-          name="content"
-          id="newTaskContent"
-    
-        />
+        <textarea onChange={handleChange} name="content" id="newTaskContent" />
         <br />
         <button type="submit">submit</button>
       </form>

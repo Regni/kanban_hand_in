@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 const Header = () => {
   const [time, setTime] = useState(new Date().toLocaleTimeString("nl-NL"));
 
+  //Update the clock every second
   useEffect(() => {
     const timer = setInterval(() =>
       setTime(new Date().toLocaleTimeString("nl-NL"), 1000)
