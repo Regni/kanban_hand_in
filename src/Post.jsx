@@ -1,6 +1,9 @@
 import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 import DataContext from "./context/DataContext";
 import { RiDeleteBin5Line as Bin } from "react-icons/ri";
+import { BsArrowsFullscreen as Fullscreen } from "react-icons/bs";
+
 const Post = ({ title, id, date, handleSelect }) => {
   const { handleDelete } = useContext(DataContext);
 
@@ -19,15 +22,19 @@ const Post = ({ title, id, date, handleSelect }) => {
     >
       <h3>{title}</h3>
       <p>{date}</p>
-
-      <Bin
-        className="deleteIcon"
-        onClick={(e) => {
-          //Stops both on clicks being triggered
-          e.stopPropagation();
-          handleDelete(id);
-        }}
-      />
+      <div className="iconContainer">
+        <Link to={`/posts/${id}`}>
+          <Fullscreen className="fullScreenIcon" />
+        </Link>
+        <Bin
+          className="deleteIcon"
+          onClick={(e) => {
+            //Stops both on clicks being triggered
+            e.stopPropagation();
+            handleDelete(id);
+          }}
+        />
+      </div>
     </div>
   );
 };
