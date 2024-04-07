@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import DataContext from "./context/DataContext";
 import { IoMdClose as Closecross } from "react-icons/io";
+import SelectColumn from "./SelectColumn";
 
 const TaskPopup = ({ task, setIsOpen, onClose }) => {
   //creat copy of the task to be edited
@@ -61,6 +62,7 @@ const TaskPopup = ({ task, setIsOpen, onClose }) => {
         >
           Delete
         </button>
+        <SelectColumn id={task.id} />
       </div>
     </div>
   );

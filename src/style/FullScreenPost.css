@@ -1,4 +1,5 @@
 .fullScreenPostContainer{
+  position: relative;
   width: 40vw;
   min-width: 25rem;
   color: black;
@@ -12,6 +13,12 @@
   margin: 1rem;
   box-shadow: 0 0 4px 6px whitesmoke;
   padding: 1rem;
+}
+
+.columnSelector{
+position: absolute;
+top: 3px;
+left: 5px
 }
 
 

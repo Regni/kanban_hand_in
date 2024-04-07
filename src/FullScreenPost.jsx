@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import DataContext from "./context/DataContext";
-
+import SelectColumn from "./SelectColumn";
 import "./style/FullScreenPost.css";
 
 const FullScreenPost = () => {
@@ -26,6 +26,9 @@ const FullScreenPost = () => {
 
   return (
     <div className="fullScreenPostContainer" id={ID}>
+      <div className="columnSelector">
+        <SelectColumn id={ID} />
+      </div>
       <h1
         contentEditable
         onInput={handleEdit}
