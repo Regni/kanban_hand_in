@@ -10,6 +10,7 @@ export const DataProvider = ({ children }) => {
     JSON.parse(localStorage.getItem("allTasks")) || []
   );
   //useState that will contain a array of names of columns their index is also in which order they will show up
+  // I never used set columns but it was made to add new columns and and easily be upgrading (if more tiem)
   const [columns, setColumns] = useState(["todo", "doing", "done"]);
 
   //Removes the div and information from the post

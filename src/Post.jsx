@@ -6,10 +6,9 @@ import { BsArrowsFullscreen as Fullscreen } from "react-icons/bs";
 
 const Post = ({ title, id, date, handleSelect }) => {
   const { handleDelete } = useContext(DataContext);
-
+  //finds dragging object and stores info while moving
   const handleDragStart = (e, id) => {
     e.dataTransfer.setData("id", id);
-    console.log("draggin!");
   };
 
   return (

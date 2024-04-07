@@ -4,6 +4,7 @@ import DataContext from "./context/DataContext";
 const SelectColumn = ({ id }) => {
   const { posts, setPosts, columns } = useContext(DataContext);
 
+  //finds the task and updates it when use changes the column
   const handleSelectItem = (e) => {
     const changePostColumn = posts.find((task) => task.id == id);
     changePostColumn.assignedTo = Number(e.target.value);
@@ -16,7 +17,7 @@ const SelectColumn = ({ id }) => {
   };
 
   return (
-    <select onChange={handleSelectItem}>
+    <select id="dropdownColumn" onChange={handleSelectItem}>
       <option value={""}>Select a column</option>
       {columns.map((columnName, index) => (
         <option key={`${columnName}${index}`} value={index}>

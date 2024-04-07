@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Missing = () => {
+  //a simple missing page
   return (
     <div className="missingContainer">
       <h1>This page does not excist!</h1>
